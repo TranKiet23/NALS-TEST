@@ -31,6 +31,7 @@
         ></textarea>
         <div v-if="errors.content" class="invalid-feedback">{{ errors.content }}</div>
       </div>
+        <!-- Content Field -->
 
        <div class="mb-3">
         <label for="image" class="form-label">Image</label>
@@ -101,7 +102,6 @@ import { LoadingStore } from '../stores/loading'
     const handleImageUpload = (event) => {
       const file = event.target.files[0];
       if (file) {
-        // Store the file object
         form.image = {
           file: file,
           url: URL.createObjectURL(file)
