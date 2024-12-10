@@ -44,7 +44,6 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['chose-item']);
-
 const handleClick = () => {
   if (!props.loading) {
     emit('chose-item', props.item, props.index);

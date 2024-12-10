@@ -33,15 +33,8 @@
     </div>
      <!-- BLOGS -->
     <div class="container">
-      <div class="dropdown py-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Action
-      </button>
-      <ul class="dropdown-menu">
-        <li>
-          <router-link class="dropdown-item" to="/new">Create</router-link>
-        </li>
-      </ul>
+      <div class="dropdown py-3 d-flex justify-content-end">
+        <router-link class="btn btn-secondary" to="/new">Create</router-link>
     </div>
     <ul class="list-unstyled">
          <BlogItem

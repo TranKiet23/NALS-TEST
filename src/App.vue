@@ -8,7 +8,6 @@ import { LoadingStore } from './stores/loading';
 
 
 const globalDataStore = LoadingStore();
-
 const loading = computed(() => globalDataStore.$state.isLoading);
 
 
