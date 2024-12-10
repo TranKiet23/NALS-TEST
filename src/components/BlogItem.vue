@@ -12,7 +12,7 @@
         </div>
     </template>
     <template v-else>
-      <div class="tooltip-container p-2" title="Click to see detail">
+      <div class="tooltip-container p-3" title="Click to see detail">
         <img class="media-object custom-images" loading="lazy" alt="images description" :src="item.image.url">
         <div class="tooltip">Click to see detail</div>
         <div class="media-body py-1" >
@@ -76,12 +76,12 @@ const handleClick = () => {
   padding: px;
   position: absolute;
   z-index: 1;
-  bottom: 107%;
+  bottom: 106%;
   left: 50%;
   margin-left: -60px;
   opacity: 0;
   transition: opacity 0.3s;
-  width: 120px;
+  width: 135px;
 }
 
 .tooltip-container:hover .tooltip {
