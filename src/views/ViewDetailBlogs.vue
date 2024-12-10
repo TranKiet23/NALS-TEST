@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-5">
-    <h1 class="mb-4">{{ isEditing ? 'Edit Blog' : 'Blog Details' }}</h1>
+    <h1 class="mb-4">{{ isEditing ? 'Edit Blog' : 'Blog Detail' }}</h1>
     <form @submit.prevent="handleSubmit">
       <!-- Title Field -->
       <div class="mb-3">

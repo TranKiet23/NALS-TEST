@@ -17,11 +17,8 @@ const loading = computed(() => globalDataStore.$state.isLoading);
 <template>
 <header class="header-outer">
 	<div class="header-inner responsive-wrapper">
-		<div class="header-logo">
-			<img loading="lazy" src="https://assets.codepen.io/285131/acme-2.svg" />
-		</div>
 		<nav class="header-navigation">
-			<button>Demo NALS</button>
+			<p style="color:#fff;">Demo List Blogs</p>
 		</nav>
 	</div>
   </header>
