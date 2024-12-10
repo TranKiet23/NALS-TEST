@@ -1,5 +1,6 @@
 <template>
-  <li class="media py-2 px-1 cursor" :class="{ 'odd': item?.active }" @click="handleClick">
+  <li class="media py-2 px-1 cursor" :class="{ 'odd': item?.active, 'border-blue': index % 2 === 0, 'border-gray': index % 2 !== 0 }" 
+  @click="handleClick">
     <!-- Show skeleton when loading, actual content otherwise -->
     <template v-if="loading">
         <div v-for="(item, i) in 10" :key="i">
@@ -11,11 +12,15 @@
         </div>
     </template>
     <template v-else>
-      <img class="media-object custom-images" loading="lazy" alt="images description" :src="item.image.url">
-      <div class="media-body py-1" title="click to detail">
-        <h5 class="mt-0 my-1">{{ item.title }}</h5>
-        <p>{{ item.content }}</p>
+      <div class="tooltip-container" title="Click to see detail">
+        <img class="media-object custom-images" loading="lazy" alt="images description" :src="item.image.url">
+        <div class="tooltip">Click to see detail</div>
+        <div class="media-body py-1" >
+          <h5 class="mt-0 my-1">{{ item.title }}</h5>
+          <p :title="item.content">{{ item.content }}</p>
       </div>
+      </div>
+   
     </template>
   </li>
 </template>
@@ -56,6 +61,47 @@ const handleClick = () => {
   height: 180px;
   width: 180px;
   border-radius: 12px;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: gray;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the image */
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  width: 120px;
+}
+
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.border-blue {
+  border: 1px solid rgb(164, 229, 153);
+  border-radius: 8px;
+  margin : 7px
+
+}
+
+.border-gray {
+  border: 1px solid rgb(199, 195, 195);
+  border-radius: 8px;
+  margin : 7px
+
 }
 
 /* Skeleton styles */

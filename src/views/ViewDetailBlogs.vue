@@ -4,7 +4,7 @@
     <form @submit.prevent="handleSubmit">
       <!-- Title Field -->
       <div class="mb-3">
-        <label for="title" class="form-label">Title<span class="text-danger">(*)</span></label>
+        <label for="title" class="form-label">Title<span v-if="isEditing" class="text-danger">(*)</span></label>
         <input
           type="text"
           id="title"
@@ -20,7 +20,7 @@
 
       <!-- Content Field -->
       <div class="mb-3">
-        <label for="content" class="form-label">Content <span class="text-danger">(*)</span></label>
+        <label for="content" class="form-label">Content <span v-if="isEditing" class="text-danger">(*)</span></label>
         <textarea
           id="content"
           class="form-control"

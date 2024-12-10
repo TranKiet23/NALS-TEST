@@ -39,9 +39,8 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <router-link class="dropdown-item" to="/new">Add New</router-link>
+          <router-link class="dropdown-item" to="/new">Create</router-link>
         </li>
-        <li><a class="dropdown-item" href="#">Update</a></li>
       </ul>
     </div>
     <ul class="list-unstyled">
@@ -70,7 +69,7 @@ import APIBlogs from '../services/api'
 import axios from 'axios';
 import { useRouter, useRoute } from 'vue-router';
 import { LoadingStore } from '../stores/loading'
-import BlogItem from '../components/BlogItem.vue' // Import the new component
+import BlogItem from '../components/BlogItem.vue' 
 
 const globalDataStore = LoadingStore()
 const searchQuery = ref('')
@@ -146,4 +145,6 @@ const router = useRouter();
     margin-top: 2rem;
     font-size: 1.125rem;
 }
+
+
 </style>
