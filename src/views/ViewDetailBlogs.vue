@@ -48,7 +48,7 @@
         <img 
           v-if="form.image.url" 
           :src="form.image.url" 
-          class="mt-2" 
+          class="mt-2 mx-3" 
           style="max-width: 200px;" 
         />
       </div>
